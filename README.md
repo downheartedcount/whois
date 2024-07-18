@@ -19,7 +19,7 @@ ps.kz WHOIS сервису для получения
 ### 1. Клонирование репозитория
 
    ```bash
-   git clone 
+   git clone git@github.com:downheartedcount/whois.git 
    cd whois_service
 
 python -m venv venv
