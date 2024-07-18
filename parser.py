@@ -2,7 +2,7 @@ import logging
 import re
 
 #логирование для проверки целостности данных
-# logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO)
 
 def parse_whois_html(soup):
     data = {}
@@ -13,24 +13,24 @@ def parse_whois_html(soup):
     status_td = soup.find(text="Статус:").find_next("td") if soup.find(text="Статус:") else None
     if status_td:
         data["status"] = [ns.text.strip() for ns in status_td.find_all("b")]
-            # logging.info(f"Status: {data['status']}")
+            logging.info(f"Status: {data['status']}")
 
     registrar = soup.find(text="Регистратор:")
     if registrar:
         data["registrar"] = registrar.find_next().text.strip()
-        # logging.info(f"Registrar: {data['registrar']}")
+        logging.info(f"Registrar: {data['registrar']}")
 
     nameservers_td = soup.find(text="Серверы имен:").find_next("td") if soup.find(text="Серверы имен:") else None
     if nameservers_td:
         ns_text = nameservers_td.get_text(separator="\n").strip()
         data["nameservers"] = parse_nameservers(ns_text)
 
-            # logging.info(f"Nameservers: {data['nameservers']}")
+            logging.info(f"Nameservers: {data['nameservers']}")
 
     expiration_date = soup.find(text="Дата окончания:")
     if expiration_date:
         data["expiration_date"] = expiration_date.find_next().text.strip()
-        # logging.info(f"Expiration Date: {data['expiration_date']}")
+        logging.info(f"Expiration Date: {data['expiration_date']}")
 
     return data
 
