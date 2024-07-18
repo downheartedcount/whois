@@ -43,17 +43,17 @@ GET http://127.0.0.1:8000/lookup_whois?domain_name=example.com
 {
   "domain_name": "example.com",
   "status": ["clientDeleteProhibited", "clientTransferProhibited"],
-  "registrant_id": "HOSTERKZ-472283",
-  "registrant_name": "Hostmaster",
-  "organization": "Бигали Алишер",
-  "address": "Комиссарова 45Г",
-  "city": "Караганда",
+  "registrant_id": "HOST-0000",
+  "registrant_name": "Host",
+  "organization": "Фамилия Имя",
+  "address": "Адрес",
+  "city": "Алматы",
   "region": "-",
   "country": "Казахстан",
-  "phone": "+77470949284",
-  "email": "hostmaster@hoster.kz",
-  "registrar": "HOSTER.KZ",
-  "nameservers": ["ns1.hoster.kz (185.116.195.38)", "ns2.hoster.kz (185.121.81.104)"],
+  "phone": "+774700000",
+  "email": "host@host.kz",
+  "registrar": "HOST.KZ",
+  "nameservers": ["ns1.host.kz", "ns2.host.kz"],
   "expiration_date": "N/A"
 }
 ```
